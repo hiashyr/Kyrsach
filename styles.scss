@@ -1,0 +1,33 @@
+$color-h1: #1B1BB3;
+$color-body: #033E6B;
+$color-body2: #66A3D2;
+
+.navbar-brand {
+    color: $color-h1 !important;
+    font-size: 36px;
+}
+.nav-link {
+    color: $color-h1 !important;
+    font-size: 18px;
+    .active {
+    color: $color-h1 !important;
+    }
+}
+
+img {
+    border-radius: 5%;
+}
+
+h1 {
+    font-size: 36px;
+    color: #1B1BB3;
+}
+
+p {
+    color: $color-body;
+    font-size: 18px;
+}
+
+.card-title {
+    color: $color-body;
+}

@@ -1,0 +1,32 @@
+.navbar-brand {
+  color: #1B1BB3 !important;
+  font-size: 36px;
+}
+
+.nav-link {
+  color: #1B1BB3 !important;
+  font-size: 18px;
+}
+.nav-link .active {
+  color: #1B1BB3 !important;
+}
+
+img {
+  border-radius: 5%;
+}
+
+h1 {
+  font-size: 36px;
+  color: #1B1BB3;
+}
+
+p {
+  color: #033E6B;
+  font-size: 18px;
+}
+
+.card-title {
+  color: #033E6B;
+}
+
+/*# sourceMappingURL=styles.css.map */
