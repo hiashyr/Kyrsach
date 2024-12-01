@@ -1,3 +1,17 @@
+@charset "UTF-8";
+.dm-sans-bold-heading {
+  font-optical-sizing: auto;
+  font-weight: 700;
+  font-style: normal;
+  font-size: 36px;
+  color: #1B1BB3;
+}
+
+header hr {
+  border-top: 3px solid #330570; /* Цвет и толщина линии */
+  opacity: 100%;
+}
+
 .navbar-brand {
   color: #1B1BB3 !important;
   font-size: 36px;
@@ -11,13 +25,12 @@
   color: #1B1BB3 !important;
 }
 
-img {
-  border-radius: 5%;
+.my-5 {
+  margin-top: 5rem !important;
 }
 
-h1 {
-  font-size: 36px;
-  color: #1B1BB3;
+img {
+  border-radius: 5%;
 }
 
 p {
@@ -25,8 +38,64 @@ p {
   font-size: 18px;
 }
 
+.card {
+  border-radius: 5%;
+  transition: transform 0.2s ease-in-out;
+}
+
+.card:hover {
+  transform: scale(1.03); /* Применяем масштабирование к .card */
+  cursor: pointer;
+}
+
+.card-link {
+  text-decoration: none;
+  display: block;
+  /* Убрали transition и transform из card-link */
+}
+
 .card-title {
   color: #033E6B;
+}
+
+.button {
+  height: 60px;
+  background-color: #66A3D2;
+  border: none;
+  border-radius: 25px;
+  color: white;
+  padding: 10px 20px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-flex;
+  vertical-align: middle;
+  align-items: center; /* Выравнивание по вертикали */
+  font-size: 18px;
+  cursor: pointer;
+  margin-right: 30px;
+  font-family: "DM Sans", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 700;
+  font-style: normal;
+}
+.button .material-symbols-outlined {
+  margin-right: 15px; /* Отступ между стрелкой и текстом */
+  margin-left: -10px;
+  color: #1B1BB3;
+  width: 30px;
+  font-size: 40px;
+}
+
+.button-details {
+  background-color: #ffffff;
+  color: #033E6B;
+  border: 1px solid #033E6B;
+  font-weight: 300;
+}
+.button-details svg {
+  margin-right: 5px; /* Отступ между иконкой и текстом */
+  vertical-align: middle; /* Вертикальное выравнивание */
+  color: #1B1BB3;
 }
 
 /*# sourceMappingURL=styles.css.map */
