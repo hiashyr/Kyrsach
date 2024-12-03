@@ -98,4 +98,22 @@ p {
   color: #1B1BB3;
 }
 
+/* Start doing 2nn page (themes) */
+.wrap {
+  display: flex;
+  flex-direction: column; /* Элементы будут расположены вертикально */
+}
+
+.topics {
+  list-style: none;
+  margin-top: 20px; /* Или используйте margin для отступов между элементами*/
+  margin-bottom: 20px;
+}
+.topics li {
+  line-height: 3.5;
+}
+.topics li svg {
+  padding-right: 5px;
+}
+
 /*# sourceMappingURL=styles.css.map */

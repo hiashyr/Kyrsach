@@ -2,6 +2,7 @@ $color-h1: #1B1BB3;
 $color-body: #033E6B;
 $color-body2: #66A3D2;
 $purple: #330570;
+$gray: #EBEEF0;
 
 .dm-sans-bold-heading {
     font-optical-sizing: auto;
@@ -101,4 +102,29 @@ p {
         vertical-align: middle; /* Вертикальное выравнивание */
         color: $color-h1;
     }
+}
+
+
+
+/* Start doing 2nn page (themes) */
+
+.wrap {
+    display: flex;
+    flex-direction: column; /* Элементы будут расположены вертикально */
+}
+
+.topics {
+    list-style: none;
+    margin-top: 20px; /* Или используйте margin для отступов между элементами*/
+    margin-bottom: 20px;
+
+    li {
+        line-height: 3.5;
+
+        svg {
+            padding-right: 5px;
+        }
+    }
+
+    
 }
