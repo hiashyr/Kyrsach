@@ -1,0 +1,204 @@
+$color-h1: #1B1BB3;
+$color-body: #033E6B;
+$color-body2: #66A3D2;
+$purple: #330570;
+$gray: #EBEEF0;
+
+a {
+    color: inherit; /* Наследует цвет текста родительского элемента */
+    text-decoration: none; /* Убирает подчеркивание */
+  }
+
+.dm-sans-bold-heading {
+    font-optical-sizing: auto;
+    font-weight: 700;
+    font-style: normal;
+    font-size: 36px;
+    color: #1B1BB3;
+}
+
+header {
+    hr {
+        border-top: 3px solid $purple; /* Цвет и толщина линии */
+        opacity: 100%;
+    }
+}
+
+.navbar-brand {
+    color: $color-h1 !important;
+    font-size: 36px;
+}
+.nav-link {
+    color: $color-h1 !important;
+    font-size: 18px;
+    .active {
+    color: $color-h1 !important;
+    }
+}
+
+.my-5 {
+    margin-top: 5rem !important;
+}
+
+p {
+    color: $color-body;
+    font-size: 18px;
+}
+
+.card {
+    border-radius: 5%;
+    transition: transform 0.2s ease-in-out;
+}
+
+.card:hover {
+    transform: scale(1.03); /* Применяем масштабирование к .card */
+    cursor: pointer;
+}
+
+.card-link {
+    text-decoration: none;
+    display: block;
+    /* Убрали transition и transform из card-link */
+}
+  
+.card-title {
+    color: $color-body;
+}
+
+.button {
+    height: 60px;
+    background-color: $color-body2;
+    border: none;
+    border-radius: 25px;
+    color: white;
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-flex;
+    vertical-align: middle;
+    align-items: center; /* Выравнивание по вертикали */
+    font-size: 18px;
+    cursor: pointer;
+    margin-right: 30px;
+    font-family: 'DM Sans', sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 700;
+    font-style: normal;
+
+    .material-symbols-outlined {
+        margin-right: 15px; /* Отступ между стрелкой и текстом */
+        margin-left: -10px;
+        color: $color-h1;
+        width: 30px;
+        font-size: 40px;
+    }
+}
+
+.button-details {
+    background-color: #ffffff;
+    color: $color-body;
+    border: 1px solid $color-body;
+    font-weight: 300;
+    svg {
+        margin-right: 5px; /* Отступ между иконкой и текстом */
+        vertical-align: middle; /* Вертикальное выравнивание */
+        color: $color-h1;
+    }
+}
+
+
+
+/* Start doing 2nd page (themes) */
+
+.wrap {
+    display: flex;
+    flex-direction: column; /* Элементы будут расположены вертикально */
+}
+
+.topics {
+    list-style: none;
+    margin-top: 20px; /* Или используйте margin для отступов между элементами*/
+    margin-bottom: 20px;
+
+    li {
+        line-height: 3.5;
+
+        svg {
+            padding-right: 5px;
+        }
+    }
+}
+
+
+/*Test page*/
+
+
+.container-test {
+    background-color: $gray;
+    margin-top: 50px;
+    padding: 50px;
+}
+.question {
+  font-weight: bold;
+  font-size: 25px;
+  color: $color-h1;
+  margin-bottom: 10px;
+}
+
+.options {
+  font-weight: bold;
+  font-size: 20px;
+  color: $color-body;
+  margin-bottom: 20px;
+}
+
+.option {
+  display: block;
+  margin-bottom: 10px;
+}
+
+.button {
+  display: inline-block;
+  padding: 10px 20px;
+  background-color: #428bca;
+  color: #fff;
+  border: none;
+  cursor: pointer;
+  font-size: 16px;
+  border-radius: 4px;
+  transition: background-color 0.3s;
+  margin-right: 10px;
+}
+
+.button:hover {
+  background-color: #3071a9;
+}
+
+.result {
+  text-align: center;
+  margin-top: 20px;
+  font-weight: bold;
+}
+
+.hide{
+  display: none;
+}
+
+.quiz-image {
+    max-width: 100%; /* Чтобы изображение не выходило за границы контейнера */
+    height: auto;
+    margin-bottom: 10px; /* Отступ снизу */
+    display: block; /* Чтобы изображение занимало всю ширину */
+    margin: 0 auto; /* Центрирование по горизонтали */
+    padding-bottom: 30px;
+}
+
+.question-container {
+    padding-bottom: 20px;
+}
+
+.question-header {
+    font-weight: bold;
+    font-size: 30px;
+    color: $color-h1;
+}

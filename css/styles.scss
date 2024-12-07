@@ -4,6 +4,11 @@ $color-body2: #66A3D2;
 $purple: #330570;
 $gray: #EBEEF0;
 
+a {
+    color: inherit; /* Наследует цвет текста родительского элемента */
+    text-decoration: none; /* Убирает подчеркивание */
+  }
+
 .dm-sans-bold-heading {
     font-optical-sizing: auto;
     font-weight: 700;
@@ -106,7 +111,7 @@ p {
 
 
 
-/* Start doing 2nn page (themes) */
+/* Start doing 2nd page (themes) */
 
 .wrap {
     display: flex;
@@ -120,6 +125,7 @@ p {
 
     li {
         line-height: 3.5;
+        font-size: 18px;
 
         svg {
             padding-right: 5px;
