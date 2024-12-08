@@ -126,9 +126,19 @@ p {
     li {
         line-height: 3.5;
         font-size: 18px;
+        background-color: $color-body2;
+        border-radius: 40px;
+        margin-bottom: 20px;
+        width: 1000px;
 
         svg {
-            padding-right: 5px;
+            margin-right: 25px;
+            margin-left: 20px;
+            margin-bottom: 5px;
+
+            path {
+                fill: white;
+            }
         }
     }
 

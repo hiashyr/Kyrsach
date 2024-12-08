@@ -1,8 +1,11 @@
 $color-h1: #1B1BB3;
 $color-body: #033E6B;
 $color-body2: #66A3D2;
+$blue-light: #DBECF9;
 $purple: #330570;
 $gray: #EBEEF0;
+$succes: #66D28F;
+$wrong: #D95B5B;
 
 a {
     color: inherit; /* Наследует цвет текста родительского элемента */
@@ -134,9 +137,10 @@ p {
 
 
 .container-test {
-    background-color: $gray;
+    background-color: $blue-light;
     margin-top: 50px;
     padding: 50px;
+    border-radius: 10px;
 }
 .question {
   font-weight: bold;
@@ -176,8 +180,17 @@ p {
 
 .result {
   text-align: center;
-  margin-top: 20px;
+  margin-bottom: 50px;
   font-weight: bold;
+  font-size: 25px;
+  color: $color-body;
+
+  p {
+    text-align: center;
+    margin-top: 20px;
+    font-weight: bold;
+    font-size: 25px;
+  }
 }
 
 .hide{
@@ -201,4 +214,71 @@ p {
     font-weight: bold;
     font-size: 30px;
     color: $color-h1;
+}
+
+  #ticket-display {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px; /* Настраиваемый отступ снизу */
+}
+
+.ticket-square {
+    width: 30px;
+    height: 30px;
+    margin: 0 5px; /* Отступ между квадратами */
+    border: 1px solid #ccc;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 18px;
+    color: $purple;
+    border-radius: 5px;
+}
+
+.timer_n_ticket {
+    display: flex; /* Enables flexbox layout */
+
+    > div {
+        margin-right: 30px;
+    }
+
+    #timer {
+        padding-top: 3px;
+        font-size: 18px;
+        margin-left: 10px;
+    }
+}
+
+.ticket-square.correct {
+    background-color: $succes; /* Зелёный фон для правильных ответов */
+}
+
+.ticket-square.incorrect {
+    background-color: $wrong; /* Красный фон для неправильных ответов */
+}
+
+.ticket-square.solved {
+    background-color: $color-body2; /* Светло-голубой фон для решенных билетов */
+}
+
+.test-success {
+    color:$succes; /* Зеленый текст для сообщения об успешном прохождении теста */
+}
+  
+.test-incorrect {
+    color: $wrong; /* Красный текст для сообщения о не успешном прохождении теста */
+}
+
+.incorrect-answer {
+    margin-bottom: 20px; /* Добавим отступ между ответами */
+    border-bottom: 1px solid #ccc; /* Добавим разделитель */
+    padding-bottom: 10px;
+}
+  
+.incorrect-image {
+    max-width: 500px; /* Или другое значение по вашему желанию */
+    height: auto;
+    margin-bottom: 10px;
+    display: block;
+    margin: 0 auto; /* Центрирование изображения */
 }

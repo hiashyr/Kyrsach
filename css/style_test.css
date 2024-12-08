@@ -119,9 +119,10 @@ p {
 
 /*Test page*/
 .container-test {
-  background-color: #EBEEF0;
+  background-color: #DBECF9;
   margin-top: 50px;
   padding: 50px;
+  border-radius: 10px;
 }
 
 .question {
@@ -162,8 +163,16 @@ p {
 
 .result {
   text-align: center;
+  margin-bottom: 50px;
+  font-weight: bold;
+  font-size: 25px;
+  color: #033E6B;
+}
+.result p {
+  text-align: center;
   margin-top: 20px;
   font-weight: bold;
+  font-size: 25px;
 }
 
 .hide {
@@ -187,4 +196,69 @@ p {
   font-weight: bold;
   font-size: 30px;
   color: #1B1BB3;
+}
+
+#ticket-display {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 20px; /* Настраиваемый отступ снизу */
+}
+
+.ticket-square {
+  width: 30px;
+  height: 30px;
+  margin: 0 5px; /* Отступ между квадратами */
+  border: 1px solid #ccc;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 18px;
+  color: #330570;
+  border-radius: 5px;
+}
+
+.timer_n_ticket {
+  display: flex; /* Enables flexbox layout */
+}
+.timer_n_ticket > div {
+  margin-right: 30px;
+}
+.timer_n_ticket #timer {
+  padding-top: 3px;
+  font-size: 18px;
+  margin-left: 10px;
+}
+
+.ticket-square.correct {
+  background-color: #66D28F; /* Зелёный фон для правильных ответов */
+}
+
+.ticket-square.incorrect {
+  background-color: #D95B5B; /* Красный фон для неправильных ответов */
+}
+
+.ticket-square.solved {
+  background-color: #66A3D2; /* Светло-голубой фон для решенных билетов */
+}
+
+.test-success {
+  color: #66D28F; /* Зеленый текст для сообщения об успешном прохождении теста */
+}
+
+.test-incorrect {
+  color: #D95B5B; /* Красный текст для сообщения о не успешном прохождении теста */
+}
+
+.incorrect-answer {
+  margin-bottom: 20px; /* Добавим отступ между ответами */
+  border-bottom: 1px solid #ccc; /* Добавим разделитель */
+  padding-bottom: 10px;
+}
+
+.incorrect-image {
+  max-width: 500px; /* Или другое значение по вашему желанию */
+  height: auto;
+  margin-bottom: 10px;
+  display: block;
+  margin: 0 auto; /* Центрирование изображения */
 }
