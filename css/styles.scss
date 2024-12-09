@@ -87,6 +87,8 @@ p {
     font-optical-sizing: auto;
     font-weight: 700;
     font-style: normal;
+    margin-top: 20px;
+    margin-bottom: 20px;
 
     .material-symbols-outlined {
         margin-right: 15px; /* Отступ между стрелкой и текстом */
@@ -123,13 +125,16 @@ p {
     margin-top: 20px; /* Или используйте margin для отступов между элементами*/
     margin-bottom: 20px;
 
-    li {
+    .topic {
         line-height: 3.5;
         font-size: 18px;
         background-color: $color-body2;
         border-radius: 40px;
         margin-bottom: 20px;
-        width: 1000px;
+        position: relative; /* Необходимо для корректного позиционирования псевдоэлемента */
+        transition: width 0.3s ease; /* Плавный переход */
+        display: block; /*  Или block, в зависимости от ваших нужд */
+
 
         svg {
             margin-right: 25px;
@@ -141,6 +146,10 @@ p {
             }
         }
     }
+}
 
-    
+@media (max-width: 1200px) {
+    .topic {
+        text-align-last: center !important;
+    }
 }
