@@ -136,8 +136,10 @@ p {
   border-radius: 40px;
   margin-bottom: 20px;
   position: relative; /* Необходимо для корректного позиционирования псевдоэлемента */
-  -webkit-transition: width 0.3s ease;
-  transition: width 0.3s ease; /* Плавный переход */
+  -webkit-transition: -webkit-transform 0.3s ease;
+  transition: -webkit-transform 0.3s ease;
+  transition: transform 0.3s ease;
+  transition: transform 0.3s ease, -webkit-transform 0.3s ease; /* Добавляем плавный переход */
   display: block; /*  Или block, в зависимости от ваших нужд */
 }
 .topics .topic svg {
@@ -147,6 +149,12 @@ p {
 }
 .topics .topic svg path {
   fill: white;
+}
+
+.topics .topic:hover {
+  -webkit-transform: scaleX(1.05);
+          transform: scaleX(1.05); /* Увеличиваем ширину на 5% */
+  cursor: pointer;
 }
 
 @media (max-width: 1200px) {

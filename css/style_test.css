@@ -256,7 +256,7 @@ p {
 }
 
 .incorrect-image {
-  max-width: 500px; /* Или другое значение по вашему желанию */
+  max-width: 90%; /* Или другое значение по вашему желанию */
   height: auto;
   margin-bottom: 10px;
   display: block;

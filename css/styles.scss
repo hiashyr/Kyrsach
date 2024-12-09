@@ -132,7 +132,7 @@ p {
         border-radius: 40px;
         margin-bottom: 20px;
         position: relative; /* Необходимо для корректного позиционирования псевдоэлемента */
-        transition: width 0.3s ease; /* Плавный переход */
+        transition: transform 0.3s ease; /* Добавляем плавный переход */
         display: block; /*  Или block, в зависимости от ваших нужд */
 
 
@@ -147,6 +147,15 @@ p {
         }
     }
 }
+
+.topics .topic:hover {
+    transform: scaleX(1.05); /* Увеличиваем ширину на 5% */
+    cursor: pointer;
+}
+
+.topics .topic {
+
+  }
 
 @media (max-width: 1200px) {
     .topic {
