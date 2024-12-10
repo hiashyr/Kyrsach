@@ -924,6 +924,9 @@ function stopTimer() {
   
 let selectedOptions = []; // Объявляем массив для хранения ответов пользователя
 
+let numberOfErrors = 0; 
+let initialQuestionsCount = 20; // Задаем начальное количество вопросов
+
 function checkAnswer() {
     const selectedOption = document.querySelector('input[name="quiz"]:checked');
     if (selectedOption) {
@@ -932,6 +935,7 @@ function checkAnswer() {
         if (answer === questionData.answer) {
             score++;
         } else {
+            numberOfErrors++;
             incorrectAnswers.push({
                 question: questionData.question,
                 incorrectAnswer: answer,
@@ -939,10 +943,18 @@ function checkAnswer() {
                 image: questionData.image
             });
         }
-        selectedOptions.push(answer); // Добавляем ответ в массив selectedOptions
+        selectedOptions.push(answer);
 
         currentQuestion++;
         selectedOption.checked = false;
+
+        const additionalQuestions = calculateAdditionalQuestions();
+
+        if (additionalQuestions > 0 && questionsAdded === 0) { // Добавляем только если ошибок было 1 или 2 и вопросы еще не добавлялись
+            addMoreQuestions(additionalQuestions);
+            questionsAdded = additionalQuestions; // Отмечаем, что вопросы добавлены
+        }
+
         if (currentQuestion < selectedQuestions.length) {
             displayQuestion();
         } else {
@@ -951,6 +963,21 @@ function checkAnswer() {
         }
     }
 }
+
+
+function calculateAdditionalQuestions() {
+    if (numberOfErrors === 1) return 5;
+    if (numberOfErrors === 2) return 10;
+    return 0;
+}
+
+
+function addMoreQuestions(numQuestions) {
+    const newQuestions = selectRandomQuestions(numQuestions);
+    selectedQuestions = selectedQuestions.concat(newQuestions);
+    initialQuestionsCount = selectedQuestions.length;
+}
+
 
   
 function displayResult() {
@@ -984,10 +1011,10 @@ function displayResult() {
     let statusMessage = '';
     let statusClass = '';
     if (score === selectedQuestions.length) {
-        statusMessage = 'Тема прорешена!';
+        statusMessage = 'Экзамен сдан!';
         statusClass = 'test-success';
     } else {
-        statusMessage = 'Тема не прорешена!';
+        statusMessage = 'Экзамен не сдан';
         statusClass = 'test-incorrect';
     }
     const statusParagraph = document.createElement('p');
@@ -999,7 +1026,7 @@ function displayResult() {
     timeTakenDisplay.textContent = `Вы потратили ${formatTime(timeTaken)} на тест.`;
     resultContainer.appendChild(timeTakenDisplay);
 
-    const scoreMessage = `Решено верно ${score} вопросов из ${selectedQuestions.length}!`;
+    const scoreMessage = `Решено верно ${score} вопросов из ${initialQuestionsCount}!`;
     resultContainer.appendChild(document.createElement('p')).textContent = scoreMessage;
 
     quizContainer.style.display = 'none';
@@ -1008,8 +1035,6 @@ function displayResult() {
     showAnswerButton.style.display = 'inline-block';
 }
 
-
-  
   function formatTime(seconds) {
     const minutes = Math.floor(seconds / 60);
     const remainingSeconds = Math.floor(seconds % 60);
@@ -1041,7 +1066,7 @@ function showAnswer() {
     }
 
     resultContainer.innerHTML = `
-      <p>Решено верно ${score} вопросов из 20!</p>
+      <p>Решено верно ${score} вопросов из ${initialQuestionsCount}</p>
       <p>Неправильные ответы:</p>
       ${incorrectAnswersHtml}
     `;
@@ -1055,3 +1080,4 @@ showAnswerButton.addEventListener('click', showAnswer);
 
 displayTicketNumbers(20);
 displayQuestion();
+selectedQuestions = selectRandomQuestions(initialQuestionsCount);
