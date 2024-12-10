@@ -8,6 +8,7 @@ const quizData = [
             'Не обязан'
         ],
         answer: 'Обязан',
+        image: './img/exam/image0.png'
     },
     {//2nd Question
         question: 'Аварийная сигнализация на буксируемом механическом транспортном средстве должна быть включена:',
@@ -17,6 +18,7 @@ const quizData = [
             'Во всех случаях, когда осуществляется буксировка'
         ],
         answer: 'Во всех случаях, когда осуществляется буксировка',
+        image: './img/exam/image1.png'
     },
     {//3rd Question
         question: 'На каком расстоянии от транспортного средства должен быть выставлен знак аварийной остановки в данной ситуации?',
@@ -27,6 +29,7 @@ const quizData = [
             'Не менее 30 м'
         ],
         answer: 'Не менее 15 м',
+        image: './img/exam/image2.png'
     },
     {//4th Question
         question: 'Какой знак используется для обозначения транспортного средства при вынужденной остановке в местах, где с учетом условий видимости оно не может быть своевременно замечено другими водителями?',
@@ -36,6 +39,7 @@ const quizData = [
             'В'
         ],
         answer: 'А',
+        image: './img/exam/image3.png'
     },
     {//5th Question
         question: 'Как необходимо обозначить своё транспортное средство при дорожно-транспортном происшествии?',
@@ -45,6 +49,7 @@ const quizData = [
             'Обоими перечисленными способами'
         ],
         answer: 'Обоими перечисленными способами',
+        image: './img/exam/image4.png'
     },
     {//6th Question
         question: 'Как необходимо обозначить буксируемый автомобиль при отсутствии или неисправности аварийной сигнализации?',
@@ -54,6 +59,7 @@ const quizData = [
             'Включить задний противотуманный фонарь'
         ],
         answer: 'Установить на задней части буксируемого автомобиля знак аварийной остановки',
+        image: './img/exam/image5.png'
     },
     {//7th Question
         question: 'На каком расстоянии от транспортного средства должен быть выставлен знак аварийной остановки в данной ситуации?',
@@ -63,6 +69,7 @@ const quizData = [
             'Не менее 30 м'
         ],
         answer: 'Не менее 30 м',
+        image: './img/exam/image6.png'
     },
     {//8th Question
         question: 'Какие внешние световые приборы должны быть включены на транспортном средстве, имеющем опознавательные знаки «Перевозка детей», при посадке и высадке из него детей?',
@@ -72,6 +79,7 @@ const quizData = [
             'Аварийная сигнализация'
         ],
         answer: 'Аварийная сигнализация',
+        image: './img/exam/image7.png'
     },
     {//9th Question
         question: 'Какой опознавательный знак должен быть закреплен на задней части буксируемого механического транспортного средства при отсутствии или неисправности аварийной сигнализации?',
@@ -81,6 +89,7 @@ const quizData = [
             'В'
         ],
         answer: 'А',
+        image: './img/exam/image8.png'
     },
     {//10st Question
         question: 'Кто из водителей нарушил правила остановки?',
@@ -90,6 +99,7 @@ const quizData = [
             'Оба'
         ],
         answer: 'Оба',
+        image: './img/exam/image9.png'
     },
     {//11nd Question
         question: 'Остановка на автомагистрали разрешена:',
@@ -99,6 +109,7 @@ const quizData = [
             'Только на специальных площадках для стоянки, обозначенных соответствующими знаками'
         ],
         answer: 'Только на специальных площадках для стоянки, обозначенных соответствующими знаками',
+        image: './img/exam/image10.png'
     },
     {//12rd Question
         question: 'Разрешается ли движение задним ходом на автомагистрали?',
@@ -108,6 +119,7 @@ const quizData = [
             'Запрещается'
         ],
         answer: 'Запрещается',
+        image: './img/exam/image11.png'
     },
     {//13th Question
         question: 'Разрешается ли учебная езда на автомагистрали?',
@@ -117,6 +129,7 @@ const quizData = [
             'Разрешается'
         ],
         answer: 'Разрешается',
+        image: './img/exam/image12.png'
     },
     {//14th Question
         question: 'Кто из водителей нарушает правила разворота на автомагистрали?',
@@ -127,6 +140,7 @@ const quizData = [
             'Никто не нарушает'
         ],
         answer: 'Только водитель легкового автомобиля',
+        image: './img/exam/image13.png'
     },
     {//15th Question
         question: 'Разрешено ли Вам остановиться на автомагистрали правее линии, обозначающей край проезжей части?',
@@ -136,6 +150,7 @@ const quizData = [
             'Запрещено'
         ],
         answer: 'Разрешено только в случае вынужденной остановки',
+        image: './img/exam/image14.png'
     },
     {//16th Question
         question: 'Где Вам разрешается остановиться при движении по автомагистрали?',
@@ -145,6 +160,7 @@ const quizData = [
             'В любом месте у края проезжей части'
         ],
         answer: 'Только через 500 м',
+        image: './img/exam/image15.png'
     },
     {//17th Question
         question: 'Можно ли Вам, управляя грузовым автомобилем, осуществить опережение в данной ситуации?',
@@ -154,6 +170,7 @@ const quizData = [
             'Нельзя'
         ],
         answer: 'Можно, если разрешенная максимальная масса автомобиля не более 2,5 т',
+        image: './img/exam/image16.png'
     },
     {//18th Question
         question: 'Разрешено ли обучать вождению на этой дороге?',
@@ -163,6 +180,7 @@ const quizData = [
             'Разрешено'
         ],
         answer: 'Разрешено',
+        image: './img/exam/image17.png'
     },
     {//19th Question
         question: 'Разрешается ли движение по автомагистрали на транспортном средстве, скорость которого по техническому состоянию менее 40 км/ч?',
@@ -172,6 +190,7 @@ const quizData = [
             'Запрещается'
         ],
         answer: 'Запрещается',
+        image: './img/exam/image18.png'
     },
     {//20th Question
         question: 'Кто из водителей нарушает Правила?',
@@ -181,6 +200,7 @@ const quizData = [
             'Никто не нарушает'
         ],
         answer: 'Водители грузового автомобиля с разрешенной максимальной массой 3 т и мопеда',
+        image: './img/exam/image19.png'
     },
     {//21th Question
         question: 'На каких участках автомагистрали запрещается движение задним ходом?',
@@ -190,6 +210,7 @@ const quizData = [
             'На всем протяжении дороги'
         ],
         answer: 'На всем протяжении дороги',
+        image: './img/exam/image20.png'
     },
     {//22th Question
         question: 'Нарушил ли водитель Правила при вынужденной остановке на автомагистрали?',
@@ -199,6 +220,7 @@ const quizData = [
             'Не нарушил'
         ],
         answer: 'Нарушил, если не выставил знак аварийной остановки',
+        image: './img/exam/image21.png'
     },
     {//23th Question
         question: 'Кому Вы должны уступить дорогу при повороте направо?',
@@ -208,11 +230,13 @@ const quizData = [
             'Всем пешеходам'
         ],
         answer: 'Всем пешеходам',
+        image: './img/exam/image22.png'
     },
     {//24th Question
         question: 'При приближении к остановившемуся транспортному средству с включенной аварийной сигнализацией, которое имеет опознавательные знаки «Перевозка детей», водитель должен:',
         options: ['Снизить скорость', 'При необходимости остановиться и пропустить детей', 'Осуществить все перечисленные действия'],
         answer: 'Осуществить все перечисленные действия',
+        image: './img/exam/image23.png'
     },
     {//25th Question
         question: 'Где необходимо остановиться, если сразу за пешеходным переходом образовался затор?',
@@ -222,6 +246,7 @@ const quizData = [
             'Не ближе 5 м до пешеходного перехода'
         ],
         answer: 'Непосредственно перед пешеходным переходом',
+        image: './img/exam/image24.png'
     },
     {//26th Question
         question: 'В каком случае водитель транспортного средства, приближающегося к нерегулируемому пешеходному переходу, обязан уступить дорогу пешеходам?',
@@ -231,6 +256,7 @@ const quizData = [
             'В обоих перечисленных случаях'
         ],
         answer: 'В обоих перечисленных случаях',
+        image: './img/exam/image25.png'
     },
     {//27th Question
         question: 'Подъехав к трамваю попутного направления, остановившемуся у посадочной площадки, которая расположена посередине дороги, водитель должен:',
@@ -240,6 +266,7 @@ const quizData = [
             'Остановиться и продолжить движение только после начала движения трамвая',
         ],
         answer: 'Уступить дорогу пешеходам, идущим к трамваю или от него',
+        image: './img/exam/image26.png'
     },
     {//28th Question
         question: 'Разрешается ли Вам на легковом автомобиле перестроиться вправо, чтобы продолжить движение в прямом направлении?',
@@ -249,6 +276,7 @@ const quizData = [
             'Запрещается'
         ],
         answer: 'Разрешается, если Вы управляете легковым такси',
+        image: './img/exam/image27.png'
     },
     {//29th Question
         question: 'Вам разрешено продолжить движение:',
@@ -259,6 +287,7 @@ const quizData = [
             'По любой траектории из указанных'
         ],
         answer: 'Только по траектории Б',
+        image: './img/exam/image28.png'
     },
     {//30th Question
         question: 'Кто из водителей должен уступить дорогу трамваю?',
@@ -269,6 +298,7 @@ const quizData = [
             'Никто из водителей'
         ],
         answer: 'Никто из водителей',
+        image: './img/exam/image29.png'
     },
     {//31th Question
         question: 'Обязаны ли Вы уступить дорогу маршрутному транспортному средству, отъезжающему от тротуара, где нет обозначенного места остановки ?',
@@ -278,6 +308,7 @@ const quizData = [
             'Не обязаны'
         ],
         answer: 'Не обязаны',
+        image: './img/exam/image30.png'
     },
     {//32th Question
         question: 'В данной ситуации Вы:',
@@ -286,6 +317,7 @@ const quizData = [
             'Имеете преимущество, так как автобус начинает движение с выездом на левую полосу'
         ],
         answer: 'Должны уступить дорогу автобусу, начинающему движение от обозначенного места остановки',
+        image: './img/exam/image31.png'
     },
     {//33 Question
         question: 'Ваши действия в данной ситуации?',
@@ -295,6 +327,7 @@ const quizData = [
             'Дождетесь выключения бело-лунного мигающего сигнала и проедете переезд'
         ],
         answer: 'Проедете переезд, убедившись в отсутствии приближающегося поезда',
+        image: './img/exam/image32.png'
     },
     {//34th Question
         question: 'Разрешается ли водителю выполнить объезд грузового автомобиля?',
@@ -304,6 +337,7 @@ const quizData = [
             'Запрещается'
         ],
         answer: 'Запрещается',
+        image: './img/exam/image33.png'
     },
     {//35th Question
         question: 'Разрешено ли Вам проехать железнодорожный переезд?',
@@ -313,6 +347,7 @@ const quizData = [
             'Запрещено'
         ],
         answer: 'Запрещено',
+        image: './img/exam/image34.png'
     },
     {//36th Question
         question: 'Разрешён ли Вам въезд на железнодорожный переезд в данной ситуации?',
@@ -322,6 +357,7 @@ const quizData = [
             'Запрещен'
         ],
         answer: 'Запрещен',
+        image: './img/exam/image35.png'
     },
     {//37th Question
         question: 'В данной ситуации Вы должны остановиться:',
@@ -331,6 +367,7 @@ const quizData = [
             'За 5 м до ближайшего рельса'
         ],
         answer: 'У знака «Движение без остановки запрещено»',
+        image: './img/exam/image36.png'
     },
     {//38th Question
         question: 'В данной ситуации Вы должны остановиться:',
@@ -340,6 +377,7 @@ const quizData = [
             'Не ближе 10 м до ближайшего рельса'
         ],
         answer: 'Не ближе 5 м от светофора или шлагбаума',
+        image: './img/exam/image37.png'
     },
     {//39th Question
         question: 'Как Вам следует поступить в данной ситуации?',
@@ -349,6 +387,7 @@ const quizData = [
             'Остановиться перед знаком и продолжить движение, убедившись в отсутствии приближающегося поезда'
         ],
         answer: 'Остановиться перед знаком и продолжить движение, убедившись в отсутствии приближающегося поезда',
+        image: './img/exam/image38.png'
     },
     {//40th Question
         question: 'На каком наименьшем расстоянии до ближайшего рельса Вы должны остановиться?',
@@ -359,6 +398,7 @@ const quizData = [
             '20 м'
         ],
         answer: '10 м',
+        image: './img/exam/image39.png'
     },
     {//41th Question
         question: 'Сигналом остановки для машиниста поезда служит следующее расположение руки или рук (днем с лоскутом яркой материи либо каким-нибудь хорошо видимым предметом, ночью — с факелом или фонарем):',
@@ -369,6 +409,7 @@ const quizData = [
             'Поднятые вверх обе руки'
         ],
         answer: 'Круговое движение руки',
+        image: './img/exam/image40.png'
     },
     {//42th Question
         question: 'При вынужденной остановке на железнодорожном переезде, если в транспортном средстве находятся пассажиры, водитель должен:',
@@ -378,6 +419,7 @@ const quizData = [
             'Высадить людей при появлении поезда'
         ],
         answer: 'Немедленно высадить людей',
+        image: './img/exam/image42.png'
     },
     {//43th Question
         question: 'Можно ли Вам въехать на железнодорожный переезд?',
@@ -387,6 +429,7 @@ const quizData = [
             'Нельзя'
         ],
         answer: 'Нельзя',
+        image: './img/exam/image42.png'
     },
     {//44th Question
         question: 'С какой максимальной скоростью можно продолжить движение за знаком?',
@@ -397,6 +440,7 @@ const quizData = [
             '20 км/ч'
         ],
         answer: '20 км/ч',
+        image: './img/exam/image43.png'
     },
     {//45th Question
         question: 'Какие из перечисленных действий запрещены водителям механических транспортных средств в жилой зоне?',
@@ -407,6 +451,7 @@ const quizData = [
             'Все перечисленные действия'
         ],
         answer: 'Все перечисленные действия',
+        image: './img/exam/image44.png'
     },
     {//46th Question
         question: 'Где могут двигаться пешеходы в жилой зоне?',
@@ -416,6 +461,7 @@ const quizData = [
             'По тротуарам и по всей ширине проезжей части'
         ],
         answer: 'По тротуарам и по всей ширине проезжей части',
+        image: './img/exam/image45.png'
     },
     {//47th Question
         question: 'С какой максимальной скоростью разрешается движение транспортных средств в жилых зонах, велосипедных зонах и на дворовых территориях?',
@@ -425,6 +471,7 @@ const quizData = [
             '40 км/ч'
         ],
         answer: '20 км/ч',
+        image: './img/exam/image46.png'
     },
     {//48th Question
         question: 'При выезде из жилой зоны необходимо уступить дорогу:',
@@ -435,6 +482,7 @@ const quizData = [
             'Всем транспортным средствам'
         ],
         answer: 'Всем транспортным средствам',
+        image: './img/exam/image47.png'
     },
     {//49th Question
         question: 'Водители должны уступать дорогу другим участникам движения:',
@@ -444,6 +492,7 @@ const quizData = [
             'В обоих перечисленных случаях'
         ],
         answer: 'В обоих перечисленных случаях',
+        image: './img/exam/image48.png'
     },
     {//50th Question
         question: 'Вы обязаны уступить дорогу грузовому автомобилю:',
@@ -453,6 +502,7 @@ const quizData = [
             'В обоих перечисленных случаях'
         ],
         answer: 'В обоих перечисленных случаях',
+        image: './img/exam/image49.png'
     },
     {//51th Question
         question: 'При повороте направо Вы:',
@@ -462,6 +512,7 @@ const quizData = [
             'Должны уступить дорогу автомобилю с включенными проблесковым маячком и специальным звуковым сигналом, а также пешеходам'
         ],
         answer: 'Должны уступить дорогу автомобилю с включенными проблесковым маячком и специальным звуковым сигналом, а также пешеходам',
+        image: './img/exam/image50.png'
     },
     {//52th Question
         question: 'Запрещается выполнять обгон транспортного средства, имеющего нанесенные на наружные поверхности специальные цветографические схемы:',
@@ -471,6 +522,7 @@ const quizData = [
             'При наличии обоих перечисленных условий'
         ],
         answer: 'При наличии обоих перечисленных условий',
+        image: './img/exam/image51.png'
     },
     {//53th Question
         question: 'Как Вы должны поступить в данной ситуации?',
@@ -480,6 +532,7 @@ const quizData = [
             'Остановиться около автомобиля ДПС и продолжить движение только после разрешения сотрудника полиции'
         ],
         answer: 'Снизить скорость и быть готовым в случае необходимости незамедлительно остановиться',
+        image: './img/exam/image52.png'
     },
     {//54th Question
         question: 'В данной ситуации водитель автомобиля с включенными проблесковыми маячками:',
@@ -489,6 +542,7 @@ const quizData = [
             'Может двигаться в любом направлении'
         ],
         answer: 'Может двигаться в любом направлении',
+        image: './img/exam/image53.png'
     },
     {//55th Question
         question: 'В каких случаях необходимо уступить дорогу транспортному средству, имеющему нанесенные на наружные поверхности специальные цветографические схемы?',
@@ -498,6 +552,7 @@ const quizData = [
             'Во всех случаях'
         ],
         answer: 'Если его водитель включил проблесковый маячок синего цвета и специальный звуковой сигнал',
+        image: './img/exam/image54.png'
     },
     {//56th Question
         question: 'Как следует поступить водителю легкового автомобиля при приближении автомобиля оперативной службы?',
@@ -507,6 +562,7 @@ const quizData = [
             'Остановиться справа у тротуара'
         ],
         answer: 'Перестроиться на правую полосу',
+        image: './img/exam/image55.png'
     },
     {//57th Question
         question: 'Преимущество перед другими участниками движения имеет водитель автомобиля:',
@@ -517,6 +573,7 @@ const quizData = [
             'Любого из перечисленных'
         ],
         answer: 'Только с включенными проблесковым маячком синего (синего и красного) цвета и специальным звуковым сигналом',
+        image: './img/exam/image56.png'
     },
     {//58th Question
         question: 'При движении в каком направлении Вы должны уступить дорогу автомобилю с включенными проблесковым маячком и специальным звуковым сигналом?',
@@ -526,6 +583,7 @@ const quizData = [
             'В любом'
         ],
         answer: 'В любом',
+        image: './img/exam/image57.png'
     },
     {//59th Question
         question: 'В каком случае Вы должны будете уступить дорогу автомобилю ДПС?',
@@ -535,6 +593,7 @@ const quizData = [
             'В любом'
         ],
         answer: 'Если на автомобиле ДПС одновременно будут включены проблесковые маячки синего цвета и специальный звуковой сигнал',
+        image: './img/exam/image58.png'
     },
     {//60th Question
         question: 'В каких из перечисленных случаев запрещена буксировка на гибкой сцепке?',
@@ -545,6 +604,7 @@ const quizData = [
             'Во всех перечисленных случаях'
         ],
         answer: 'Только в гололедицу',
+        image: './img/exam/image59.png'
     },
     {//61th Question
         question: 'Какое расстояние должно быть обеспечено между буксирующим и буксируемым транспортными средствами при буксировке на жёсткой сцепке?',
@@ -554,6 +614,7 @@ const quizData = [
             'От 6 до 8 м'
         ],
         answer: 'Не более 4 м',
+        image: './img/exam/image60.png'
     },
     {//62th Question
         question: 'Буксировка двухколесного мотоцикла разрешается:',
@@ -563,6 +624,7 @@ const quizData = [
             'Если водитель соответствующего транспортного средства имеет право на управления транспортными средствами в течение двух и более лет'
         ],
         answer: 'Только если мотоцикл с боковым прицепом, а водитель соответствующего транспортного средства имеет право на управления транспортными средствами в течение двух и более лет',
+        image: './img/exam/image61.png'
     },
     {//63th Question
         question: 'Можно ли буксировать автомобиль с недействующей тормозной системой, если фактическая масса этого автомобиля превышает половину фактической массы Вашего автомобиля?',
@@ -572,6 +634,7 @@ const quizData = [
             'Нельзя'
         ],
         answer: 'Нельзя',
+        image: './img/exam/image62.png'
     },
     {//64th Question
         question: 'Разрешено ли перевозить людей в буксируемом легковом автомобиле?',
@@ -581,6 +644,7 @@ const quizData = [
             'Запрещено'
         ],
         answer: 'Разрешено только при буксировке на гибкой или жесткой сцепке',
+        image: './img/exam/image63.png'
     },
     {//65th Question
         question: 'При буксировке на гибкой сцепке между буксирующим и буксируемым транспортными средствами должно быть обеспечено расстояние:',
@@ -590,6 +654,7 @@ const quizData = [
             'От 6 до 8 м'
         ],
         answer: 'От 4 до 6 м',
+        image: './img/exam/image64.png'
     },
     {//66th Question
         question: 'Разрешается ли буксировка в гололедицу, если у буксируемого транспортного средства исправны тормоза и рулевое управление?',
@@ -599,6 +664,7 @@ const quizData = [
             'Запрещается'
         ],
         answer: 'Разрешается только на жёсткой сцепке или методом частичной погрузки',
+        image: './img/exam/image65.png'
     },
     {//67th Question
         question: 'Разрешается ли перевозка людей в салоне легкового автомобиля, буксирующего неисправное транспортное средство?',
@@ -608,6 +674,7 @@ const quizData = [
             'Запрещается'
         ],
         answer: 'Разрешается',
+        image: './img/exam/image66.png'
     },
     {//68st Question
         question: 'Какое оборудование должно иметь механическое транспортное средство, используемое для обучения вождению?',
@@ -618,6 +685,7 @@ const quizData = [
             'Все перечисленное оборудование'
         ],
         answer: 'Все перечисленное оборудование',
+        image: './img/exam/image67.png'
     },
     {//69nd Question
         question: 'В каких случаях водители мопедов нарушают Правила?',
@@ -627,6 +695,7 @@ const quizData = [
             'В обоих перечисленных случаях'
         ],
         answer: 'В обоих перечисленных случаях',
+        image: './img/exam/image68.png'
     },
     {//70rd Question
         question: 'Водителям мопедов разрешено двигаться:',
@@ -637,6 +706,7 @@ const quizData = [
             'Во всех перечисленных случаях'
         ],
         answer: 'Во всех перечисленных случаях',
+        image: './img/exam/image69.png'
     },
     {//71th Question
         question: 'На каких дорогах водителям мопедов запрещается поворачивать налево или разворачиваться?',
@@ -646,6 +716,7 @@ const quizData = [
             'На всех перечисленных дорогах'
         ],
         answer: 'На всех перечисленных дорогах',
+        image: './img/exam/image70.png'
     },
     {//72st Question
         question: 'Для перевозки людей на мотоцикле водитель должен иметь водительское удостоверение на право управления транспортными средствами:',
@@ -655,6 +726,7 @@ const quizData = [
             'Только категории «A» или подкатегории «A1» в течение 2 и более лет'
         ],
         answer: 'Только категории «A» или подкатегории «A1» в течение 2 и более лет',
+        image: './img/exam/image71.png'
     },
     {//73nd Question
         question: 'На каком рисунке изображён автомобиль, водитель которого не нарушает правил перевозки грузов?',
@@ -664,6 +736,7 @@ const quizData = [
             'На обоих'
         ],
         answer: 'На обоих',
+        image: './img/exam/image72.png'
     },
     {//74rd Question
         question: 'Какие из перечисленных требований являются обязательными при перевозке детей?',
@@ -673,6 +746,7 @@ const quizData = [
             'Оба требования являются обязательными'
         ],
         answer: 'Оба требования являются обязательными',
+        image: './img/exam/image73.png'
     },
     {//75th Question
         question: 'На каком рисунке изображён автомобиль, водитель которого нарушает правила перевозки грузов?',
@@ -682,6 +756,7 @@ const quizData = [
             'На обоих'
         ],
         answer: 'Только на А',
+        image: './img/exam/image74.png'
     },
     {//76th Question
         question: 'Перевозка груза запрещена, если он:',
@@ -691,6 +766,7 @@ const quizData = [
             'Установлен на сиденье для пассажиров'
         ],
         answer: 'Закрывает внешние световые приборы, световозвращатели, регистрационные и опознавательные знаки',
+        image: './img/exam/image75.png'
     },
     {//77th Question
         question: 'Запрещается перевозка детей в легковом автомобиле без использования соответствующих детских удерживающих систем (устройств):',
@@ -700,6 +776,7 @@ const quizData = [
             'В обоих перечисленных случаях'
         ],
         answer: 'В обоих перечисленных случаях',
+        image: './img/exam/image76.png'
     },
 
   ];
@@ -713,15 +790,17 @@ const ticketDisplay = document.getElementById('ticket-display');
 const timerDisplay = document.getElementById('timer'); // Get the timer display element
   
   
-  let timeLeft = 1200; // 20 minutes in seconds
-  let currentQuestion = 0;
-  let score = 0;
-  let incorrectAnswers = [];
-  let solvedTickets = 0;
-  let startTime;
-  let endTime;
-  let timerInterval;
-  let selectedQuestions; // Массив для хранения 20 выбранных вопросов
+let timeLeft = 1200; // 20 минут в секундах
+let currentQuestion = 0;
+let score = 0;
+let incorrectAnswers = [];
+let solvedTickets = 0;
+let startTime;
+let endTime;
+let timerInterval;
+let selectedQuestions;
+
+
   
   
   function shuffleArray(array) {
@@ -731,63 +810,65 @@ const timerDisplay = document.getElementById('timer'); // Get the timer display 
     }
   }
   
-  // Функция для выбора 20 случайных вопросов
+
   function selectRandomQuestions(numQuestions) {
-    if (numQuestions > quizData.length) {
-        console.error("В массиве quizData недостаточно вопросов.");
-        return quizData; // Вернуть все вопросы, если numQuestions слишком велико
-    }
-    const shuffledData = [...quizData]; // Создаем копию, чтобы не изменять оригинал
+    const shuffledData = [...quizData]; // Создаем копию, чтобы не менять оригинал
     shuffleArray(shuffledData);
     return shuffledData.slice(0, numQuestions);
-    }
-  
-  function displayTicketNumbers(totalTickets) {
-    ticketDisplay.innerHTML = '';
+}
+
+function displayTicketNumbers(totalTickets) {
+    ticketDisplay.innerHTML = ''; // Очищаем контейнер перед отображением
     for (let i = 1; i <= totalTickets; i++) {
         const square = document.createElement('div');
         square.className = 'ticket-square';
-        square.textContent = i;
-        ticketDisplay.appendChild(square);
+        square.textContent = i; // Задаем номер билета как текст
+        ticketDisplay.appendChild(square); // Добавляем квадрат в контейнер
     }
-  }
+}
+
   
-  function displayQuestion() {
-    const questionData = selectedQuestions[currentQuestion]; // Используем массив selectedQuestions
+function displayQuestion() {
+    const questionData = selectedQuestions[currentQuestion];
     const questionNumber = currentQuestion + 1;
-  
+
     const questionContainer = document.createElement('div');
     questionContainer.className = 'question-container';
-  
+
     const questionHeader = document.createElement('div');
     questionHeader.className = 'question-header';
-  
+
     const questionNumberElement = document.createElement('span');
     questionNumberElement.className = 'question-number';
     questionNumberElement.textContent = `Вопрос ${questionNumber}:`;
     questionHeader.appendChild(questionNumberElement);
-  
-    const imageContainer = document.createElement('div');
-    imageContainer.className = 'image-container';
-  
-    const imageElement = document.createElement('img');
-    imageElement.src = `./img/exam/image${quizData.indexOf(questionData)}.png`; // Используем индекс из оригинального quizData
-    imageElement.alt = `Изображение к вопросу ${currentQuestion + 1}`;  
-    imageElement.className = 'quiz-image';
-    imageContainer.appendChild(imageElement);
-  
-    questionHeader.appendChild(imageContainer);
+
+    // Обработка изображений: проверка на существование перед добавлением
+    if (questionData.image) {
+        const imageContainer = document.createElement('div');
+        imageContainer.className = 'image-container';
+        const imageElement = document.createElement('img');
+        imageElement.src = questionData.image;
+        imageElement.className = 'quiz-image';
+        imageElement.alt = `Изображение к вопросу ${currentQuestion + 1}`;
+        imageElement.onerror = () => { 
+            imageElement.style.display = 'none'; 
+            console.error(`Не удалось загрузить изображение: ${imageElement.src}`); 
+        }; // Обработка ошибки 404
+        imageContainer.appendChild(imageElement);
+        questionHeader.appendChild(imageContainer);
+    }
+
     questionContainer.appendChild(questionHeader);
-  
-  
+
     const questionElement = document.createElement('div');
     questionElement.className = 'question';
     questionElement.innerHTML = questionData.question;
     questionContainer.appendChild(questionElement);
-  
+
     const optionsElement = document.createElement('div');
     optionsElement.className = 'options';
-  
+
     const shuffledOptions = [...questionData.options];
     shuffleArray(shuffledOptions);
   
@@ -810,17 +891,16 @@ const timerDisplay = document.getElementById('timer'); // Get the timer display 
     quizContainer.innerHTML = '';
     quizContainer.appendChild(questionContainer);
     quizContainer.appendChild(optionsElement);
-  
-    // Помечаем текущий билет как решенный
+
     const ticketSquares = ticketDisplay.querySelectorAll('.ticket-square');
     if (ticketSquares.length > currentQuestion) {
-      ticketSquares[currentQuestion].classList.add('solved');
-      solvedTickets++;
+        ticketSquares[currentQuestion].classList.add('solved');
+        solvedTickets++;
     }
-  
+
     if (currentQuestion === 0) {
-      startTime = new Date();
-      startTimer(); // запускаем таймер при первом вопросе
+        startTime = new Date();
+        startTimer();
     }
   }
   
@@ -838,27 +918,32 @@ const timerDisplay = document.getElementById('timer'); // Get the timer display 
     }, 1000);
 }
   
-  function stopTimer() {
+function stopTimer() {
     clearInterval(timerInterval);
-  }
+}
   
-  function checkAnswer() {
+let selectedOptions = []; // Объявляем массив для хранения ответов пользователя
+
+function checkAnswer() {
     const selectedOption = document.querySelector('input[name="quiz"]:checked');
     if (selectedOption) {
         const answer = selectedOption.value;
-        const questionData = selectedQuestions[currentQuestion]; // Получаем данные вопроса из selectedQuestions
-        if (answer === questionData.answer) { // Используем questionData здесь тоже
+        const questionData = selectedQuestions[currentQuestion];
+        if (answer === questionData.answer) {
             score++;
         } else {
             incorrectAnswers.push({
-                question: questionData.question, // Используем questionData здесь
+                question: questionData.question,
                 incorrectAnswer: answer,
-                correctAnswer: questionData.answer, // Используем questionData здесь
+                correctAnswer: questionData.answer,
+                image: questionData.image
             });
         }
+        selectedOptions.push(answer); // Добавляем ответ в массив selectedOptions
+
         currentQuestion++;
         selectedOption.checked = false;
-        if (currentQuestion < selectedQuestions.length) { // Проверка против длины selectedQuestions
+        if (currentQuestion < selectedQuestions.length) {
             displayQuestion();
         } else {
             stopTimer();
@@ -866,61 +951,64 @@ const timerDisplay = document.getElementById('timer'); // Get the timer display 
         }
     }
 }
+
   
-  function displayResult() {
-    clearInterval(timerInterval); // Останавливаем таймер!
-  
+function displayResult() {
+    clearInterval(timerInterval);
     endTime = new Date();
     let timeTaken = (endTime - startTime) / 1000;
-    timeTaken--;
-    if (timeTaken < 0) timeTaken = 0;
-  
-    // Раскрашиваем квадратики билетов
+    timeTaken = Math.max(0, timeTaken - 1);
+
     const ticketSquares = ticketDisplay.querySelectorAll('.ticket-square');
-    ticketSquares.forEach((square, index) => {
-        if (index < score) {
-            square.classList.remove('solved');
-            square.classList.add('correct');
-        } else if (index < quizData.length) {
-            square.classList.remove('solved');
-            square.classList.add('incorrect');
+    let questionIndex = 0; // Индекс текущего вопроса
+
+    selectedQuestions.forEach((question, index) => { // Перебираем вопросы
+        const isCorrect = question.answer === selectedOptions[index]; //проверяем правильность ответа
+
+        if (ticketSquares[questionIndex]) {
+            ticketSquares[questionIndex].classList.remove('solved');
+            if (isCorrect) {
+              ticketSquares[questionIndex].classList.add('correct');
+            } else {
+              ticketSquares[questionIndex].classList.add('incorrect');
+            }
+
+          questionIndex++;
         }
+
     });
-  
-    
-  
-    resultContainer.innerHTML = ''; // Очищаем контейнер результатов
-  
-    // Создаем и добавляем сообщение о статусе темы
+
+
+    resultContainer.innerHTML = '';
+
     let statusMessage = '';
     let statusClass = '';
-    if (score === quizData.length) {
+    if (score === selectedQuestions.length) {
         statusMessage = 'Тема прорешена!';
-        statusClass = 'test-success'; // Новый класс для сообщения о результате
+        statusClass = 'test-success';
     } else {
         statusMessage = 'Тема не прорешена!';
-        statusClass = 'test-incorrect'; // Новый класс для сообщения о результате
+        statusClass = 'test-incorrect';
     }
     const statusParagraph = document.createElement('p');
     statusParagraph.textContent = statusMessage;
     statusParagraph.classList.add(statusClass);
     resultContainer.appendChild(statusParagraph);
-  
-    // Создаем и добавляем отображение затраченного времени
+
     const timeTakenDisplay = document.createElement('p');
     timeTakenDisplay.textContent = `Вы потратили ${formatTime(timeTaken)} на тест.`;
     resultContainer.appendChild(timeTakenDisplay);
-  
-    // Отображаем итоговый счет
-    let scoreMessage = `Решено верно ${score} вопросов из ${selectedQuestions.length}!`;
+
+    const scoreMessage = `Решено верно ${score} вопросов из ${selectedQuestions.length}!`;
     resultContainer.appendChild(document.createElement('p')).textContent = scoreMessage;
-  
+
     quizContainer.style.display = 'none';
     submitButton.style.display = 'none';
     retryButton.style.display = 'inline-block';
-    showAnswerButton.style.display = 'inline-block'; // Показываем кнопку "Показать ответы"
-  }
-  
+    showAnswerButton.style.display = 'inline-block';
+}
+
+
   
   function formatTime(seconds) {
     const minutes = Math.floor(seconds / 60);
@@ -929,22 +1017,20 @@ const timerDisplay = document.getElementById('timer'); // Get the timer display 
   }
   
   function retryQuiz() {
-    location.reload(); // This reloads the current page
-  }
+    location.reload();
+}
   
-  function showAnswer() {
+function showAnswer() {
     quizContainer.style.display = 'none';
     submitButton.style.display = 'none';
     retryButton.style.display = 'inline-block';
     showAnswerButton.style.display = 'none';
-  
+
     let incorrectAnswersHtml = '';
     for (let i = 0; i < incorrectAnswers.length; i++) {
-        const questionIndexInSelected = quizData.findIndex(q => q.question === incorrectAnswers[i].question); //индекс в оригинале
-        const questionIndexInOriginal = quizData.indexOf(selectedQuestions[questionIndexInSelected]); // индекс в оригинале
         incorrectAnswersHtml += `
           <div class="incorrect-answer">
-            <img src="./img/exam/image${questionIndexInOriginal}.png" alt="Image for question" class="incorrect-image">
+            ${incorrectAnswers[i].image ? `<img src="${incorrectAnswers[i].image}" alt="Image for question" class="incorrect-image">` : ''}
             <p>
               <strong>Вопрос:</strong> ${incorrectAnswers[i].question}<br>
               <strong>Ваш ответ:</strong> ${incorrectAnswers[i].incorrectAnswer}<br>
@@ -952,21 +1038,20 @@ const timerDisplay = document.getElementById('timer'); // Get the timer display 
             </p>
           </div>
         `;
-      }
-  
+    }
+
     resultContainer.innerHTML = `
-      <p>Решено верно ${score} вопросов из ${quizData.length}!</p>
+      <p>Решено верно ${score} вопросов из 20!</p>
       <p>Неправильные ответы:</p>
       ${incorrectAnswersHtml}
     `;
-  }
+}
   
-  // Инициализация массива selectedQuestions
-  selectedQuestions = selectRandomQuestions(20);
+selectedQuestions = selectRandomQuestions(20);
 
-  submitButton.addEventListener('click', checkAnswer);
-  retryButton.addEventListener('click', retryQuiz);
-  showAnswerButton.addEventListener('click', showAnswer);
-  
-  displayTicketNumbers(20);
-  displayQuestion();
+submitButton.addEventListener('click', checkAnswer);
+retryButton.addEventListener('click', retryQuiz);
+showAnswerButton.addEventListener('click', showAnswer);
+
+displayTicketNumbers(20);
+displayQuestion();
