@@ -797,7 +797,6 @@ const quizData = [
   let endTime;
   let timerInterval;
   let selectedQuestions;
-  let questionsAdded = 0;
   
   
   function shuffleArray(array) {
@@ -814,7 +813,7 @@ const quizData = [
       return shuffledData.slice(0, numQuestions);
   }
   
-  function displayTicketNumbers(totalTickets, additionalQuestions = []) {
+  function displayTicketNumbers(totalTickets) {
       ticketDisplay.innerHTML = ''; 
   
       for (let i = 1; i <= totalTickets; i++) {
@@ -822,15 +821,6 @@ const quizData = [
           square.className = 'ticket-square';
           square.textContent = i;
           ticketDisplay.appendChild(square);
-      }
-  
-      if (additionalQuestions.length > 0) {
-          for (let i = totalTickets + 1; i <= totalTickets + additionalQuestions.length; i++) {
-              const square = document.createElement('div');
-              square.className = 'ticket-square additional-question';
-              square.textContent = i;
-              ticketDisplay.appendChild(square);
-          }
       }
   }
 
@@ -960,52 +950,32 @@ const quizData = [
 
     markQuestionAsSolved();
 
-    // Добавление дополнительных вопросов
-    const additionalQuestions = calculateAdditionalQuestions();
-    if (additionalQuestions > 0 && questionsAdded === 0) {
-        const newQuestions = addMoreQuestions(additionalQuestions);
-        selectedQuestions = selectedQuestions.concat(newQuestions);
-        questionsAdded = additionalQuestions;
-        displayTicketNumbers(initialQuestionsCount, newQuestions);
-    }
 
-    currentQuestion++; // Увеличиваем счетчик вопроса
-    selectedOption.checked = false; // Сбрасываем выбранный вариант ответа
+    currentQuestion++; 
+    selectedOption.checked = false; 
 
     if (currentQuestion < selectedQuestions.length) {
-        displayQuestion(); // Отображаем следующий вопрос
+        displayQuestion(); 
     } else {
         stopTimer();
-        displayResult(); // Отображаем результаты
+        displayResult(); 
     }
 }
 
 
   
   
-  function calculateAdditionalQuestions() {
-      if (numberOfErrors === 1) return 5;
-      if (numberOfErrors === 2) return 10;
-      return 0;
-  }
-  
-  
-  function addMoreQuestions(numQuestions) {
-      const newQuestions = selectRandomQuestions(numQuestions);
-      return newQuestions; 
-  }
-  
-  
-  function displayResult() {
+function displayResult() {
     clearInterval(timerInterval);
     endTime = new Date();
     let timeTaken = (endTime - startTime) / 1000;
     timeTaken = Math.max(0, timeTaken - 1);
 
     const ticketSquares = ticketDisplay.querySelectorAll('.ticket-square');
-    let questionIndex = 0;
 
-    // Обновляем только вопросы из первоначального набора
+    // Remove the 'solved' class from all squares before adding correct/incorrect
+    ticketSquares.forEach(square => square.classList.remove('solved'));
+
     for (let i = 0; i < initialQuestionsCount; i++) {
         const isCorrect = selectedQuestions[i].answer === selectedOptions[i];
         if (ticketSquares[i]) {
@@ -1016,19 +986,6 @@ const quizData = [
             }
         }
     }
-
-    // Обновляем индикаторы для дополнительных вопросов
-    for (let i = initialQuestionsCount; i < selectedQuestions.length; i++) {
-        const isCorrect = selectedQuestions[i].answer === selectedOptions[i];
-        if (ticketSquares[i]) {
-            if (isCorrect) {
-                ticketSquares[i].classList.add('correct');
-            } else {
-                ticketSquares[i].classList.add('incorrect');
-            }
-        }
-    }
-
 
     resultContainer.innerHTML = '';
 
@@ -1058,6 +1015,7 @@ const quizData = [
     retryButton.style.display = 'inline-block';
     showAnswerButton.style.display = 'inline-block';
 }
+
   
   function formatTime(seconds) {
       const minutes = Math.floor(seconds / 60);
