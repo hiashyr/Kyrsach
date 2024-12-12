@@ -282,3 +282,31 @@ p {
     display: block;
     margin: 0 auto; /* Центрирование изображения */
 }
+
+.additional-tickets {
+    margin-top: 10px; /* Добавление отступа сверху для разделения */
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.additional-ticket {
+    /* Стиль для дополнительных квадратиков */
+    margin-right: 5px;
+    margin-bottom: 5px;
+    border: 1px solid #ccc;
+    width: 30px;
+    height: 30px;
+    text-align: center;
+    line-height: 20px;
+    border-radius: 5px;
+    cursor: default; /* Убираем курсор руки, так как они не кликабельны */
+}
+
+.additional-ticket.correct {
+    background-color: $succes;
+}
+
+.additional-ticket.incorrect {
+    background-color: $wrong;
+}
+

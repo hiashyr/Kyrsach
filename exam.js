@@ -781,229 +781,253 @@ const quizData = [
 
   ];
   
-const quizContainer = document.getElementById('quiz');
-const resultContainer = document.getElementById('result');
-const submitButton = document.getElementById('submit');
-const retryButton = document.getElementById('retry');
-const showAnswerButton = document.getElementById('showAnswer');
-const ticketDisplay = document.getElementById('ticket-display');
-const timerDisplay = document.getElementById('timer'); // Get the timer display element
+  const quizContainer = document.getElementById('quiz');
+  const resultContainer = document.getElementById('result');
+  const submitButton = document.getElementById('submit');
+  const retryButton = document.getElementById('retry');
+  const showAnswerButton = document.getElementById('showAnswer');
+  const ticketDisplay = document.getElementById('ticket-display');
+  const timerDisplay = document.getElementById('timer');
   
-  
-let timeLeft = 1200; // 20 минут в секундах
-let currentQuestion = 0;
-let score = 0;
-let incorrectAnswers = [];
-let solvedTickets = 0;
-let startTime;
-let endTime;
-let timerInterval;
-let selectedQuestions;
-
-
+  let timeLeft = 1200; 
+  let currentQuestion = 0;
+  let score = 0;
+  let incorrectAnswers = [];
+  let startTime;
+  let endTime;
+  let timerInterval;
+  let selectedQuestions;
+  let questionsAdded = 0;
   
   
   function shuffleArray(array) {
-    for (let i = array.length - 1; i > 0; i--) {
-        const j = Math.floor(Math.random() * (i + 1));
-        [array[i], array[j]] = [array[j], array[i]];
-    }
+      for (let i = array.length - 1; i > 0; i--) {
+          const j = Math.floor(Math.random() * (i + 1));
+          [array[i], array[j]] = [array[j], array[i]];
+      }
   }
   
-
+  
   function selectRandomQuestions(numQuestions) {
-    const shuffledData = [...quizData]; // Создаем копию, чтобы не менять оригинал
-    shuffleArray(shuffledData);
-    return shuffledData.slice(0, numQuestions);
-}
-
-function displayTicketNumbers(totalTickets) {
-    ticketDisplay.innerHTML = ''; // Очищаем контейнер перед отображением
-    for (let i = 1; i <= totalTickets; i++) {
-        const square = document.createElement('div');
-        square.className = 'ticket-square';
-        square.textContent = i; // Задаем номер билета как текст
-        ticketDisplay.appendChild(square); // Добавляем квадрат в контейнер
-    }
-}
-
+      const shuffledData = [...quizData]; 
+      shuffleArray(shuffledData);
+      return shuffledData.slice(0, numQuestions);
+  }
   
-function displayQuestion() {
-    const questionData = selectedQuestions[currentQuestion];
-    const questionNumber = currentQuestion + 1;
-
-    const questionContainer = document.createElement('div');
-    questionContainer.className = 'question-container';
-
-    const questionHeader = document.createElement('div');
-    questionHeader.className = 'question-header';
-
-    const questionNumberElement = document.createElement('span');
-    questionNumberElement.className = 'question-number';
-    questionNumberElement.textContent = `Вопрос ${questionNumber}:`;
-    questionHeader.appendChild(questionNumberElement);
-
-    // Обработка изображений: проверка на существование перед добавлением
-    if (questionData.image) {
-        const imageContainer = document.createElement('div');
-        imageContainer.className = 'image-container';
-        const imageElement = document.createElement('img');
-        imageElement.src = questionData.image;
-        imageElement.className = 'quiz-image';
-        imageElement.alt = `Изображение к вопросу ${currentQuestion + 1}`;
-        imageElement.onerror = () => { 
-            imageElement.style.display = 'none'; 
-            console.error(`Не удалось загрузить изображение: ${imageElement.src}`); 
-        }; // Обработка ошибки 404
-        imageContainer.appendChild(imageElement);
-        questionHeader.appendChild(imageContainer);
-    }
-
-    questionContainer.appendChild(questionHeader);
-
-    const questionElement = document.createElement('div');
-    questionElement.className = 'question';
-    questionElement.innerHTML = questionData.question;
-    questionContainer.appendChild(questionElement);
-
-    const optionsElement = document.createElement('div');
-    optionsElement.className = 'options';
-
-    const shuffledOptions = [...questionData.options];
-    shuffleArray(shuffledOptions);
+  function displayTicketNumbers(totalTickets, additionalQuestions = []) {
+      ticketDisplay.innerHTML = ''; 
   
-    for (let i = 0; i < shuffledOptions.length; i++) {
-      const option = document.createElement('label');
-      option.className = 'option';
+      for (let i = 1; i <= totalTickets; i++) {
+          const square = document.createElement('div');
+          square.className = 'ticket-square';
+          square.textContent = i;
+          ticketDisplay.appendChild(square);
+      }
   
-      const radio = document.createElement('input');
-      radio.type = 'radio';
-      radio.name = 'quiz';
-      radio.value = shuffledOptions[i];
-  
-      const optionText = document.createTextNode(shuffledOptions[i]);
-  
-      option.appendChild(radio);
-      option.appendChild(optionText);
-      optionsElement.appendChild(option);
-    }
-  
-    quizContainer.innerHTML = '';
-    quizContainer.appendChild(questionContainer);
-    quizContainer.appendChild(optionsElement);
+      if (additionalQuestions.length > 0) {
+          for (let i = totalTickets + 1; i <= totalTickets + additionalQuestions.length; i++) {
+              const square = document.createElement('div');
+              square.className = 'ticket-square additional-question';
+              square.textContent = i;
+              ticketDisplay.appendChild(square);
+          }
+      }
+  }
 
+  function markQuestionAsSolved() {
     const ticketSquares = ticketDisplay.querySelectorAll('.ticket-square');
     if (ticketSquares.length > currentQuestion) {
         ticketSquares[currentQuestion].classList.add('solved');
-        solvedTickets++;
     }
+}
+  
+  function displayQuestion() {
+      const questionData = selectedQuestions[currentQuestion];
+      const questionNumber = currentQuestion + 1;
+  
+      const questionContainer = document.createElement('div');
+      questionContainer.className = 'question-container';
+  
+      const questionHeader = document.createElement('div');
+      questionHeader.className = 'question-header';
+  
+      const questionNumberElement = document.createElement('span');
+      questionNumberElement.className = 'question-number';
+      questionNumberElement.textContent = `Вопрос ${questionNumber}:`;
+      questionHeader.appendChild(questionNumberElement);
 
-    if (currentQuestion === 0) {
-        startTime = new Date();
-        startTimer();
-    }
+      markQuestionAsSolved();
+  
+  
+      if (questionData.image) {
+          const imageContainer = document.createElement('div');
+          imageContainer.className = 'image-container';
+          const imageElement = document.createElement('img');
+          imageElement.src = questionData.image;
+          imageElement.className = 'quiz-image';
+          imageElement.alt = `Изображение к вопросу ${currentQuestion + 1}`;
+          imageElement.onerror = () => {
+              imageElement.style.display = 'none';
+              console.error(`Не удалось загрузить изображение: ${imageElement.src}`);
+          };
+          imageContainer.appendChild(imageElement);
+          questionHeader.appendChild(imageContainer);
+      }
+  
+      questionContainer.appendChild(questionHeader);
+  
+      const questionElement = document.createElement('div');
+      questionElement.className = 'question';
+      questionElement.innerHTML = questionData.question;
+      questionContainer.appendChild(questionElement);
+  
+      const optionsElement = document.createElement('div');
+      optionsElement.className = 'options';
+  
+      const shuffledOptions = [...questionData.options];
+      shuffleArray(shuffledOptions);
+  
+      for (let i = 0; i < shuffledOptions.length; i++) {
+          const option = document.createElement('label');
+          option.className = 'option';
+  
+          const radio = document.createElement('input');
+          radio.type = 'radio';
+          radio.name = 'quiz';
+          radio.value = shuffledOptions[i];
+  
+          const optionText = document.createTextNode(shuffledOptions[i]);
+  
+          option.appendChild(radio);
+          option.appendChild(optionText);
+          optionsElement.appendChild(option);
+      }
+  
+      quizContainer.innerHTML = '';
+      quizContainer.appendChild(questionContainer);
+      quizContainer.appendChild(optionsElement);
+  
+      if (currentQuestion === 0) {
+          startTime = new Date();
+          startTimer();
+      }
   }
   
+  
   function startTimer() {
-    timeLeft = 1200; // Сбрасываем таймер до 20 минут
-    timerInterval = setInterval(() => {
-        const minutes = Math.floor(timeLeft / 60);
-        const seconds = timeLeft % 60;
-        timerDisplay.textContent = `${minutes.toString().padStart(2, '0')}:${seconds.toString().padStart(2, '0')}`;
-        timeLeft--;
-        if (timeLeft < 0 || currentQuestion >= selectedQuestions.length) { // Проверка против длины selectedQuestions
-            clearInterval(timerInterval);
-            displayResult();
-        }
-    }, 1000);
-}
+      timeLeft = 1200; 
+      timerInterval = setInterval(() => {
+          const minutes = Math.floor(timeLeft / 60);
+          const seconds = timeLeft % 60;
+          timerDisplay.textContent = `${minutes.toString().padStart(2, '0')}:${seconds.toString().padStart(2, '0')}`;
+          timeLeft--;
+          if (timeLeft < 0 || currentQuestion >= selectedQuestions.length) { 
+              clearInterval(timerInterval);
+              displayResult();
+          }
+      }, 1000);
+  }
   
-function stopTimer() {
-    clearInterval(timerInterval);
-}
+  function stopTimer() {
+      clearInterval(timerInterval);
+  }
   
-let selectedOptions = []; // Объявляем массив для хранения ответов пользователя
-
-let numberOfErrors = 0; 
-let initialQuestionsCount = 20; // Задаем начальное количество вопросов
-
-function checkAnswer() {
+  let selectedOptions = []; 
+  
+  let numberOfErrors = 0;
+  let initialQuestionsCount = 20; 
+  
+  
+  function checkAnswer() {
     const selectedOption = document.querySelector('input[name="quiz"]:checked');
-    if (selectedOption) {
-        const answer = selectedOption.value;
-        const questionData = selectedQuestions[currentQuestion];
-        if (answer === questionData.answer) {
-            score++;
-        } else {
-            numberOfErrors++;
-            incorrectAnswers.push({
-                question: questionData.question,
-                incorrectAnswer: answer,
-                correctAnswer: questionData.answer,
-                image: questionData.image
-            });
-        }
-        selectedOptions.push(answer);
+    if (!selectedOption) return; // Предотвращение продолжения без выбора ответа
 
-        currentQuestion++;
-        selectedOption.checked = false;
+    const answer = selectedOption.value;
+    const questionData = selectedQuestions[currentQuestion];
 
-        const additionalQuestions = calculateAdditionalQuestions();
+    if (answer === questionData.answer) {
+        score++;
+    } else {
+        numberOfErrors++;
+        incorrectAnswers.push({
+            question: questionData.question,
+            incorrectAnswer: answer,
+            correctAnswer: questionData.answer,
+            image: questionData.image
+        });
+    }
+    selectedOptions.push(answer);
 
-        if (additionalQuestions > 0 && questionsAdded === 0) { // Добавляем только если ошибок было 1 или 2 и вопросы еще не добавлялись
-            addMoreQuestions(additionalQuestions);
-            questionsAdded = additionalQuestions; // Отмечаем, что вопросы добавлены
-        }
+    markQuestionAsSolved();
 
-        if (currentQuestion < selectedQuestions.length) {
-            displayQuestion();
-        } else {
-            stopTimer();
-            displayResult();
-        }
+    // Добавление дополнительных вопросов
+    const additionalQuestions = calculateAdditionalQuestions();
+    if (additionalQuestions > 0 && questionsAdded === 0) {
+        const newQuestions = addMoreQuestions(additionalQuestions);
+        selectedQuestions = selectedQuestions.concat(newQuestions);
+        questionsAdded = additionalQuestions;
+        displayTicketNumbers(initialQuestionsCount, newQuestions);
+    }
+
+    currentQuestion++; // Увеличиваем счетчик вопроса
+    selectedOption.checked = false; // Сбрасываем выбранный вариант ответа
+
+    if (currentQuestion < selectedQuestions.length) {
+        displayQuestion(); // Отображаем следующий вопрос
+    } else {
+        stopTimer();
+        displayResult(); // Отображаем результаты
     }
 }
 
 
-function calculateAdditionalQuestions() {
-    if (numberOfErrors === 1) return 5;
-    if (numberOfErrors === 2) return 10;
-    return 0;
-}
-
-
-function addMoreQuestions(numQuestions) {
-    const newQuestions = selectRandomQuestions(numQuestions);
-    selectedQuestions = selectedQuestions.concat(newQuestions);
-    initialQuestionsCount = selectedQuestions.length;
-}
-
-
   
-function displayResult() {
+  
+  function calculateAdditionalQuestions() {
+      if (numberOfErrors === 1) return 5;
+      if (numberOfErrors === 2) return 10;
+      return 0;
+  }
+  
+  
+  function addMoreQuestions(numQuestions) {
+      const newQuestions = selectRandomQuestions(numQuestions);
+      return newQuestions; 
+  }
+  
+  
+  function displayResult() {
     clearInterval(timerInterval);
     endTime = new Date();
     let timeTaken = (endTime - startTime) / 1000;
     timeTaken = Math.max(0, timeTaken - 1);
 
     const ticketSquares = ticketDisplay.querySelectorAll('.ticket-square');
-    let questionIndex = 0; // Индекс текущего вопроса
+    let questionIndex = 0;
 
-    selectedQuestions.forEach((question, index) => { // Перебираем вопросы
-        const isCorrect = question.answer === selectedOptions[index]; //проверяем правильность ответа
-
-        if (ticketSquares[questionIndex]) {
-            ticketSquares[questionIndex].classList.remove('solved');
+    // Обновляем только вопросы из первоначального набора
+    for (let i = 0; i < initialQuestionsCount; i++) {
+        const isCorrect = selectedQuestions[i].answer === selectedOptions[i];
+        if (ticketSquares[i]) {
             if (isCorrect) {
-              ticketSquares[questionIndex].classList.add('correct');
+                ticketSquares[i].classList.add('correct');
             } else {
-              ticketSquares[questionIndex].classList.add('incorrect');
+                ticketSquares[i].classList.add('incorrect');
             }
-
-          questionIndex++;
         }
+    }
 
-    });
+    // Обновляем индикаторы для дополнительных вопросов
+    for (let i = initialQuestionsCount; i < selectedQuestions.length; i++) {
+        const isCorrect = selectedQuestions[i].answer === selectedOptions[i];
+        if (ticketSquares[i]) {
+            if (isCorrect) {
+                ticketSquares[i].classList.add('correct');
+            } else {
+                ticketSquares[i].classList.add('incorrect');
+            }
+        }
+    }
 
 
     resultContainer.innerHTML = '';
@@ -1026,7 +1050,7 @@ function displayResult() {
     timeTakenDisplay.textContent = `Вы потратили ${formatTime(timeTaken)} на тест.`;
     resultContainer.appendChild(timeTakenDisplay);
 
-    const scoreMessage = `Решено верно ${score} вопросов из ${initialQuestionsCount}!`;
+    const scoreMessage = `Решено верно ${score} вопросов из ${selectedQuestions.length}!`;
     resultContainer.appendChild(document.createElement('p')).textContent = scoreMessage;
 
     quizContainer.style.display = 'none';
@@ -1034,50 +1058,49 @@ function displayResult() {
     retryButton.style.display = 'inline-block';
     showAnswerButton.style.display = 'inline-block';
 }
-
+  
   function formatTime(seconds) {
-    const minutes = Math.floor(seconds / 60);
-    const remainingSeconds = Math.floor(seconds % 60);
-    return `${minutes} мин ${remainingSeconds} сек`;
+      const minutes = Math.floor(seconds / 60);
+      const remainingSeconds = Math.floor(seconds % 60);
+      return `${minutes} мин ${remainingSeconds} сек`;
   }
   
   function retryQuiz() {
-    location.reload();
-}
+      location.reload();
+  }
   
-function showAnswer() {
-    quizContainer.style.display = 'none';
-    submitButton.style.display = 'none';
-    retryButton.style.display = 'inline-block';
-    showAnswerButton.style.display = 'none';
-
-    let incorrectAnswersHtml = '';
-    for (let i = 0; i < incorrectAnswers.length; i++) {
-        incorrectAnswersHtml += `
-          <div class="incorrect-answer">
-            ${incorrectAnswers[i].image ? `<img src="${incorrectAnswers[i].image}" alt="Image for question" class="incorrect-image">` : ''}
-            <p>
-              <strong>Вопрос:</strong> ${incorrectAnswers[i].question}<br>
-              <strong>Ваш ответ:</strong> ${incorrectAnswers[i].incorrectAnswer}<br>
-              <strong>Правильный ответ:</strong> ${incorrectAnswers[i].correctAnswer}
-            </p>
-          </div>
-        `;
-    }
-
-    resultContainer.innerHTML = `
-      <p>Решено верно ${score} вопросов из ${initialQuestionsCount}</p>
-      <p>Неправильные ответы:</p>
-      ${incorrectAnswersHtml}
-    `;
-}
+  function showAnswer() {
+      quizContainer.style.display = 'none';
+      submitButton.style.display = 'none';
+      retryButton.style.display = 'inline-block';
+      showAnswerButton.style.display = 'none';
   
-selectedQuestions = selectRandomQuestions(20);
-
-submitButton.addEventListener('click', checkAnswer);
-retryButton.addEventListener('click', retryQuiz);
-showAnswerButton.addEventListener('click', showAnswer);
-
-displayTicketNumbers(20);
-displayQuestion();
-selectedQuestions = selectRandomQuestions(initialQuestionsCount);
+      let incorrectAnswersHtml = '';
+      for (let i = 0; i < incorrectAnswers.length; i++) {
+          incorrectAnswersHtml += `
+            <div class="incorrect-answer">
+              ${incorrectAnswers[i].image ? `<img src="${incorrectAnswers[i].image}" alt="Image for question" class="incorrect-image">` : ''}
+              <p>
+                <strong>Вопрос:</strong> ${incorrectAnswers[i].question}<br>
+                <strong>Ваш ответ:</strong> ${incorrectAnswers[i].incorrectAnswer}<br>
+                <strong>Правильный ответ:</strong> ${incorrectAnswers[i].correctAnswer}
+              </p>
+            </div>
+          `;
+      }
+  
+      resultContainer.innerHTML = `
+        <p>Решено верно ${score} вопросов из ${selectedQuestions.length}</p>
+        <p>Неправильные ответы:</p>
+        ${incorrectAnswersHtml}
+      `;
+  }
+  
+  selectedQuestions = selectRandomQuestions(20);
+  
+  submitButton.addEventListener('click', checkAnswer);
+  retryButton.addEventListener('click', retryQuiz);
+  showAnswerButton.addEventListener('click', showAnswer);
+  
+  displayTicketNumbers(20);
+  displayQuestion();  
