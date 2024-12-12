@@ -1010,6 +1010,10 @@ function displayResult() {
     const scoreMessage = `Решено верно ${score} вопросов из ${selectedQuestions.length}!`;
     resultContainer.appendChild(document.createElement('p')).textContent = scoreMessage;
 
+    const percentage = Math.min(100, Math.round((score / 800) * 100)); // Расчет процента от 800
+    const percentageMessage = `Ваш процент готовности к экзамену - ${percentage}%`;
+    resultContainer.appendChild(document.createElement('p')).textContent = percentageMessage;
+
     quizContainer.style.display = 'none';
     submitButton.style.display = 'none';
     retryButton.style.display = 'inline-block';

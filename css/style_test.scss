@@ -310,3 +310,20 @@ p {
     background-color: $wrong;
 }
 
+.test-success {
+    display: inline-flex; /* Или display: flex; если хотите больше контроля */
+    align-items: center; /* Выравнивает элементы по вертикали */
+    
+    svg {
+        margin-left: 10px;
+    }
+}
+
+.test-incorrect {
+    display: inline-flex; /* Или display: flex; если хотите больше контроля */
+    align-items: center; /* Выравнивает элементы по вертикали */
+    
+    svg {
+        margin-left: 10px;
+    }
+}
