@@ -234,6 +234,120 @@ const quizData = [
     }
   }
   
+  function displayQuestion() {
+    const questionData = quizData[currentQuestion];
+    const questionNumber = currentQuestion + 1;
+  
+    const questionContainer = document.createElement('div');
+    questionContainer.className = 'question-container';
+  
+    const questionHeader = document.createElement('div');
+    questionHeader.className = 'question-header';
+  
+    const questionNumberElement = document.createElement('span');
+    questionNumberElement.className = 'question-number';
+    questionNumberElement.textContent = `Вопрос ${questionNumber}:`;
+    questionHeader.appendChild(questionNumberElement);
+  
+    const imageContainer = document.createElement('div');
+    imageContainer.className = 'image-container';
+  
+    const imageElement = document.createElement('img');
+    imageElement.src = `../img/test/alarm_system/image${currentQuestion}.png`;
+    imageElement.alt = `Image for question ${questionNumber}`;
+    imageElement.className = 'quiz-image';
+    imageContainer.appendChild(imageElement);
+  
+    questionHeader.appendChild(imageContainer);
+    questionContainer.appendChild(questionHeader);
+  
+  
+    const questionElement = document.createElement('div');
+    questionElement.className = 'question';
+    questionElement.innerHTML = questionData.question;
+    questionContainer.appendChild(questionElement);
+  
+    const optionsElement = document.createElement('div');
+    optionsElement.className = 'options';
+  
+    const shuffledOptions = [...questionData.options];
+    shuffleArray(shuffledOptions);
+  
+    for (let i = 0; i < shuffledOptions.length; i++) {
+      const option = document.createElement('label');
+      option.className = 'option';
+  
+      const radio = document.createElement('input');
+      radio.type = 'radio';
+      radio.name = 'quiz';
+      radio.value = shuffledOptions[i];
+  
+      const optionText = document.createTextNode(shuffledOptions[i]);
+  
+      option.appendChild(radio);
+      option.appendChild(optionText);
+      optionsElement.appendChild(option);
+    }
+  
+    quizContainer.innerHTML = '';
+    quizContainer.appendChild(questionContainer);
+    quizContainer.appendChild(optionsElement);
+  
+    // Помечаем текущий билет как решенный
+    const ticketSquares = ticketDisplay.querySelectorAll('.ticket-square');
+    if (ticketSquares.length > currentQuestion) {
+      ticketSquares[currentQuestion].classList.add('solved');
+      solvedTickets++;
+    }
+  
+    if (currentQuestion === 0) {
+      startTime = new Date();
+      startTimer(); // запускаем таймер при первом вопросе
+    }
+  }
+  
+  function startTimer() {
+    timeLeft = 1200; // Сбрасываем таймер до 20 минут
+    timerInterval = setInterval(() => {
+        const minutes = Math.floor(timeLeft / 60);
+        const seconds = timeLeft % 60;
+        timerDisplay.textContent = `${minutes.toString().padStart(2, '0')}:${seconds.toString().padStart(2, '0')}`;
+        timeLeft--;
+        if (timeLeft < 0 || currentQuestion >= quizData.length) { // Проверяем время или завершение теста
+            clearInterval(timerInterval);
+            displayResult();
+        }
+    }, 1000);
+  }
+  
+  function stopTimer() {
+    clearInterval(timerInterval);
+  }
+  
+  function checkAnswer() {
+    const selectedOption = document.querySelector('input[name="quiz"]:checked');
+    if (selectedOption) {
+        const answer = selectedOption.value;
+        if (answer === quizData[currentQuestion].answer) {
+            score++;
+        } else {
+            incorrectAnswers.push({
+                question: quizData[currentQuestion].question,
+                incorrectAnswer: answer,
+                correctAnswer: quizData[currentQuestion].answer,
+            });
+        }
+        currentQuestion++;
+        selectedOption.checked = false;
+        if (currentQuestion < quizData.length) {
+          displayQuestion();
+        } else {
+            stopTimer();
+            displayResult();
+        }
+    }
+  }
+  
   function displayResult() {
     clearInterval(timerInterval);
     endTime = new Date();
@@ -311,7 +425,7 @@ const quizData = [
         goToTopicsButton.classList.add('button');
         goToTopicsButton.textContent = 'Перейти к темам';
         goToTopicsButton.addEventListener('click', () => {
-            window.location.href = 'YOUR_LINK_HERE'; // Replace with your actual link
+            window.location.href = 'http://127.0.0.1:5500/chose_topic.html'; 
         });
         resultContainer.appendChild(goToTopicsButton);
     } else {

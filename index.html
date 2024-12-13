@@ -22,13 +22,13 @@
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav ms-auto">
                 <li class="nav-item">
-                    <a class="nav-link active" aria-current="page" href="#">О нас</a>
+                    <a class="nav-link" href="./theory.html">Теория ПДД</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#">Теория ПДД</a>
+                    <a class="nav-link" href="./about_exam.html">О экзамене</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#">О экзамене</a>
+                    <a class="nav-link" href="./about.html">О нас</a>
                 </li>
                 </ul>
             </div>
@@ -41,20 +41,20 @@
                 <div class="row">
                     <div class="col-md-7">
                         <h1 class="dm-sans-bold-heading">Здравствуйте!</h1>
-                        <p class="mt-4">Перед вами современный тренажер, с помощью которого вы можете проходить билеты в виде тестов.</p>
+                        <p class="mt-4">Перед вами современный тренажер, с помощью которого вы можете решать вопросы по теории правил дорожного движения.</p>
                         <p class="mt-4">Нажмите на кнопку или давигайтесь вниз, что бы начать. Также вы можете сначала почитать подробности об экзамене!</p>
                         <button class="button" onclick="scrollToTestModes()">
                           <span class="material-symbols-outlined">south</span>
                           Начнем!
                         </button>
-                        <button class="button button-details">
+                        <a href="./about_exam.html"><button class="button button-details">
                           <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="32" height="32" color="#000000" fill="none">
                             <circle cx="12" cy="12" r="10" stroke="currentColor" stroke-width="1.5" />
                             <path d="M10 9C10 7.89543 10.8954 7 12 7C13.1046 7 14 7.89543 14 9C14 9.39815 13.8837 9.76913 13.6831 10.0808C13.0854 11.0097 12 11.8954 12 13V13.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" />
                             <path d="M11.992 17H12.001" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
                           </svg>
                           Подробности о экзамене
-                        </button>
+                        </button></a>
                     </div>
                     <div class="col-md-5">
                         <img 
@@ -91,8 +91,7 @@
                         <div class="card-body">
                           <h1 class="card-title">Экзамен</h1>
                           <p class="card-text">Попробуйте решить экзамен как в ГИБДД!
-                            Представлены 20 вопросов из всех 40 билетов
-                            Только один шанс на ошибку...
+                            Представлены 20 случайных вопросов из 76 билетов сайта
                           </p>
                         </div>
                       </div>
@@ -119,14 +118,14 @@
             <footer class="d-flex flex-wrap justify-content-between align-items-center py-3 my-4 border-top">
               <p class="col-md-4 mb-0 text-muted">Автопилот</p>
               <ul class="nav col-md-4 justify-content-end">
-                <li class="nav-item"><a href="#" class="nav-link px-2 text-muted">О нас</a></li>
-                <li class="nav-item"><a href="#" class="nav-link px-2 text-muted">Теория ПДД</a></li>
-                <li class="nav-item"><a href="#" class="nav-link px-2 text-muted">О экзамене</a></li>
+                <li class="nav-item"><a href="./theory.html" class="nav-link px-2 text-muted">Теория ПДД</a></li>
+                <li class="nav-item"><a href="./about_exam.html" class="nav-link px-2 text-muted">О экзамене</a></li>
+                <li class="nav-item"><a href="./about.html" class="nav-link px-2 text-muted">О нас</a></li>
               </ul>
             </footer>
           </div>
     <script src="./index.js"></script>
-    <script src="bootstrap-5.3.3-dist/js/bootstrap.js"></script>
+    <script src="./bootstrap-5.3.3-dist/js/bootstrap.js"></script>
 </body>
 </html>
 

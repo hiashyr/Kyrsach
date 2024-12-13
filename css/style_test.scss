@@ -34,104 +34,38 @@ header {
 .nav-link {
     color: $color-h1 !important;
     font-size: 18px;
+    font-weight: 500;
     .active {
     color: $color-h1 !important;
     }
+}
+
+.nav-item {
+    padding-right: 20px;
+}
+
+.navbar-nav .nav-item .nav-link.active::after {
+    content: "";
+    display: block;
+    width: 100%;
+    height: 3px; /* Толщина полоски */
+    background-color: $purple; /* Цвет полоски */
+    margin-top: 5px; /* Отступ сверху */
+    border-radius: 5px; /* Добавлено для закругления */
 }
 
 .my-5 {
     margin-top: 5rem !important;
 }
 
+.mt-4 {
+    font-weight: 500;
+}
+
 p {
     color: $color-body;
     font-size: 18px;
 }
-
-.card {
-    border-radius: 5%;
-    transition: transform 0.2s ease-in-out;
-}
-
-.card:hover {
-    transform: scale(1.03); /* Применяем масштабирование к .card */
-    cursor: pointer;
-}
-
-.card-link {
-    text-decoration: none;
-    display: block;
-    /* Убрали transition и transform из card-link */
-}
-  
-.card-title {
-    color: $color-body;
-}
-
-.button {
-    height: 60px;
-    background-color: $color-body2;
-    border: none;
-    border-radius: 25px;
-    color: white;
-    padding: 10px 20px;
-    text-align: center;
-    text-decoration: none;
-    display: inline-flex;
-    vertical-align: middle;
-    align-items: center; /* Выравнивание по вертикали */
-    font-size: 18px;
-    cursor: pointer;
-    margin-right: 30px;
-    font-family: 'DM Sans', sans-serif;
-    font-optical-sizing: auto;
-    font-weight: 700;
-    font-style: normal;
-
-    .material-symbols-outlined {
-        margin-right: 15px; /* Отступ между стрелкой и текстом */
-        margin-left: -10px;
-        color: $color-h1;
-        width: 30px;
-        font-size: 40px;
-    }
-}
-
-.button-details {
-    background-color: #ffffff;
-    color: $color-body;
-    border: 1px solid $color-body;
-    font-weight: 300;
-    svg {
-        margin-right: 5px; /* Отступ между иконкой и текстом */
-        vertical-align: middle; /* Вертикальное выравнивание */
-        color: $color-h1;
-    }
-}
-
-
-
-/* Start doing 2nd page (themes) */
-
-.wrap {
-    display: flex;
-    flex-direction: column; /* Элементы будут расположены вертикально */
-}
-
-.topics {
-    list-style: none;
-    margin-top: 20px; /* Или используйте margin для отступов между элементами*/
-    margin-bottom: 20px;
-
-    li {
-        line-height: 3.5;
-
-        svg {
-            padding-right: 5px;
-        }
-    }
-}
-
 
 /*Test page*/
 
@@ -169,6 +103,7 @@ p {
   border: none;
   cursor: pointer;
   font-size: 16px;
+  font-weight: 500;
   border-radius: 4px;
   transition: background-color 0.3s;
   margin-right: 10px;
@@ -233,6 +168,7 @@ p {
     font-size: 18px;
     color: $purple;
     border-radius: 5px;
+    font-weight: 500;
 }
 
 .timer_n_ticket {

@@ -270,7 +270,7 @@ const quizData = [
         goToTopicsButton.classList.add('button');
         goToTopicsButton.textContent = 'Перейти к темам';
         goToTopicsButton.addEventListener('click', () => {
-            window.location.href = 'YOUR_LINK_HERE'; // Replace with your actual link
+            window.location.href = 'http://127.0.0.1:5500/chose_topic.html'; 
         });
         resultContainer.appendChild(goToTopicsButton);
     } else {

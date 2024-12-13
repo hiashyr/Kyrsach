@@ -7,8 +7,18 @@ $gray: #EBEEF0;
 a {
     color: inherit; /* Наследует цвет текста родительского элемента */
     text-decoration: none; /* Убирает подчеркивание */
+    font-weight: 500;
   }
 
+h2 {
+    font-size: 30px;
+    padding-top: 25px;
+}
+
+h3 {
+    font-size: 25px;
+    padding-top: 15px;
+}
 .dm-sans-bold-heading {
     font-optical-sizing: auto;
     font-weight: 700;
@@ -31,9 +41,24 @@ header {
 .nav-link {
     color: $color-h1 !important;
     font-size: 18px;
+    font-weight: 500;
     .active {
     color: $color-h1 !important;
     }
+}
+
+.nav-item {
+    padding-right: 20px;
+}
+
+.navbar-nav .nav-item .nav-link.active::after {
+    content: "";
+    display: block;
+    width: 100%;
+    height: 3px; /* Толщина полоски */
+    background-color: $purple; /* Цвет полоски */
+    margin-top: 5px; /* Отступ сверху */
+    border-radius: 5px; /* Добавлено для закругления */
 }
 
 .my-5 {
@@ -46,6 +71,7 @@ img {
 p {
     color: $color-body;
     font-size: 18px;
+    font-weight: 500;
 }
 
 .card {
@@ -85,7 +111,7 @@ p {
     margin-right: 30px;
     font-family: 'DM Sans', sans-serif;
     font-optical-sizing: auto;
-    font-weight: 700;
+    font-weight: 600;
     font-style: normal;
     margin-top: 20px;
     margin-bottom: 20px;
@@ -103,7 +129,6 @@ p {
     background-color: #ffffff;
     color: $color-body;
     border: 1px solid $color-body;
-    font-weight: 300;
     svg {
         margin-right: 5px; /* Отступ между иконкой и текстом */
         vertical-align: middle; /* Вертикальное выравнивание */
@@ -160,5 +185,36 @@ p {
 @media (max-width: 1200px) {
     .topic {
         text-align-last: center !important;
+    }
+}
+
+
+.special_word {
+    color: $purple;
+}
+.about {
+    color: #66A3D2;
+    font-size: 18px;
+}
+
+.max-width-img {
+    max-width: 55%; /* Или другое значение в процентах от ширины родительского контейнера */
+    padding-top: 20px;
+}
+
+.chose_theory {
+    font-size: 18px;
+    color: $purple;
+    padding-top: 10px;
+    line-height: 3;
+}
+
+.col-md-12 {
+    h2 {
+        color: $color-h1;
+    }
+    
+    h3 {
+        color: $purple;
     }
 }
