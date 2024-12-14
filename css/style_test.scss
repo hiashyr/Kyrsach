@@ -155,6 +155,7 @@ p {
     display: flex;
     justify-content: center;
     margin-bottom: 20px; /* Настраиваемый отступ снизу */
+    flex-wrap: wrap; /* Ключевое свойство для переноса на новую строку */
 }
 
 .ticket-square {
@@ -169,6 +170,7 @@ p {
     color: $purple;
     border-radius: 5px;
     font-weight: 500;
+    margin: 5px;
 }
 
 .timer_n_ticket {
@@ -262,4 +264,8 @@ p {
     svg {
         margin-left: 10px;
     }
+}
+
+#retry {
+    margin-bottom: 20px;
 }

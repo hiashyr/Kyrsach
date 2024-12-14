@@ -235,7 +235,7 @@ const quizData = [
     imageContainer.className = 'image-container';
   
     const imageElement = document.createElement('img');
-    imageElement.src = `../img/hard/image${currentQuestion}.png`;
+    imageElement.src = `./img/hard/image${currentQuestion}.png`;
     imageElement.alt = `Image for question ${questionNumber}`;
     imageElement.className = 'quiz-image';
     imageContainer.appendChild(imageElement);
