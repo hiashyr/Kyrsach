@@ -988,7 +988,7 @@ function displayResult() {
 
     let statusMessage = '';
     let statusClass = '';
-    if (score === quizData.length) {
+    if (score === 20) {
         statusMessage = 'Экзамен сдан!';
         statusClass = 'test-success';
     } else {

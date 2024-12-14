@@ -151,11 +151,11 @@ p {
     color: $color-h1;
 }
 
-  #ticket-display {
+#ticket-display {
     display: flex;
     justify-content: center;
-    margin-bottom: 20px; /* Настраиваемый отступ снизу */
-    flex-wrap: wrap; /* Ключевое свойство для переноса на новую строку */
+    margin-bottom: 20px;
+    flex-wrap: wrap;
 }
 
 .ticket-square {
